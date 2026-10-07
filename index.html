@@ -23,20 +23,41 @@
 <style>
 :root{
   /* 取自 AgileNest/src/app/globals.css 设计 tokens */
+  color-scheme:light;
   --paper:#f3f1ea; --ink:#1a1913; --muted:#514c43;
   --card:#ffffff; --border:#e8e3d8; --line:#ded8c9;
-  --brand:#294a78; --brand-hover:#1e3a60; --brand-soft:#e8eef8;
-  --terracotta:#bf6a34; --terracotta-soft:#f6e7d5;
+  --surface-2:#faf8f3;
+  --brand:#294a78; --brand-hover:#1e3a60; --brand-soft:#e8eef8; --brand-border:#cfdcf0;
+  --on-brand:#ffffff;
+  --terracotta:#bf6a34; --terracotta-soft:#f6e7d5; --terracotta-border:#e8d2b6;
+  --s-unclaimed:#7c8698; --s-progress:#35548c; --s-submitted:#a9722a;
+  --s-accepted:#3f7a58; --s-rejected:#b6482f;
+  --header-bg:rgba(243,241,234,.9);
+  --dot:rgba(28,22,12,.05);
   --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
   --serif:Georgia,"Times New Roman","Songti SC","SimSun",serif;
   --radius:10px;
+}
+/* 黑夜模式 · 同一套设计语言的暗色版本 */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#15161a; --ink:#ecebe6; --muted:#a3a099;
+  --card:#1e2026; --border:#2d3038; --line:#383c45;
+  --surface-2:#191b20;
+  --brand:#8fb0dd; --brand-hover:#a9c5ea; --brand-soft:#212a38; --brand-border:#33405a;
+  --on-brand:#15161a;
+  --terracotta:#e29a6a; --terracotta-soft:#33261b; --terracotta-border:#4d3a28;
+  --s-unclaimed:#8b93a3; --s-progress:#7fa3d9; --s-submitted:#d9a75f;
+  --s-accepted:#6fb28c; --s-rejected:#e0705a;
+  --header-bg:rgba(21,22,26,.86);
+  --dot:rgba(255,255,255,.05);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   margin:0;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;
   background-color:var(--paper);
-  background-image:radial-gradient(circle at 1px 1px,rgba(28,22,12,.05) 1px,transparent 0);
+  background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 0);
   background-size:24px 24px;
   -webkit-font-smoothing:antialiased;
 }
@@ -53,7 +74,7 @@ a{color:var(--brand)}
 .sec-head{max-width:74ch;margin-bottom:40px}
 
 /* 页头 */
-header.site{position:sticky;top:0;z-index:60;background:rgba(243,241,234,.9);
+header.site{position:sticky;top:0;z-index:60;background:var(--header-bg);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .bar{display:flex;align-items:center;gap:18px;height:60px}
 .mark{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;white-space:nowrap;text-decoration:none;color:var(--ink)}
@@ -64,12 +85,20 @@ nav.links a.active{color:var(--brand);font-weight:650;background:var(--brand-sof
 .btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;text-decoration:none;
   padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--brand);
   cursor:pointer;font-family:inherit;transition:.18s}
-.btn:hover{background:var(--brand-soft);border-color:#cfdcf0}
+.btn:hover{background:var(--brand-soft);border-color:var(--brand-border)}
+
+/* 白天 / 黑夜 切换 */
+.theme-toggle{display:inline-flex;align-items:center;gap:2px;padding:2px;border-radius:999px;
+  border:1px solid var(--border);background:var(--card)}
+.tt-opt{font:inherit;font-size:12.5px;font-weight:600;line-height:1;color:var(--muted);background:transparent;
+  border:0;border-radius:999px;padding:6px 11px;cursor:pointer;transition:.18s;white-space:nowrap}
+.tt-opt:hover{color:var(--brand)}
+.tt-opt[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
 
 /* Hero */
 .hero{padding-top:104px;padding-bottom:100px}
 .badge{display:inline-block;font-size:12.5px;font-weight:650;color:var(--brand);background:var(--brand-soft);
-  border:1px solid #cfdcf0;border-radius:999px;padding:5px 13px}
+  border:1px solid var(--brand-border);border-radius:999px;padding:5px 13px}
 h1{font-size:clamp(40px,6.4vw,74px);line-height:1.02;letter-spacing:-.035em;margin:20px 0 10px}
 .tagline{font-family:var(--serif);font-size:clamp(15px,1.6vw,17px);color:var(--terracotta);margin:0 0 18px}
 .teamline{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--muted);
@@ -77,7 +106,7 @@ h1{font-size:clamp(40px,6.4vw,74px);line-height:1.02;letter-spacing:-.035em;marg
 .teamline b{color:var(--ink);font-weight:650}
 .hero-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:2px}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;text-decoration:none;
-  padding:10px 20px;border-radius:999px;background:var(--brand);color:#fff;border:1px solid var(--brand);transition:.18s}
+  padding:10px 20px;border-radius:999px;background:var(--brand);color:var(--on-brand);border:1px solid var(--brand);transition:.18s}
 .btn-primary:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
 .btn-primary svg{flex:none}
 .repo-url{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px}
@@ -92,13 +121,13 @@ h1{font-size:clamp(40px,6.4vw,74px);line-height:1.02;letter-spacing:-.035em;marg
 .mock-top .t{font-size:13px;font-weight:650}
 .mock-top .u{margin-left:auto;font-size:11.5px;color:var(--muted)}
 .mock-cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.mcol{background:#faf8f3;border:1px solid var(--border);border-radius:9px;padding:10px 9px;min-height:152px;
+.mcol{background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:10px 9px;min-height:152px;
   min-width:0;overflow:hidden}
 .mcol .h{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:650;color:var(--muted);
   margin-bottom:9px;white-space:nowrap;overflow:hidden}
 .mcol .h i{width:7px;height:7px;border-radius:50%;flex:none}
 .mcol .h b{margin-left:auto;font-weight:600;color:#b8b2a6}
-.mcard{background:#fff;border:1px solid var(--border);border-left:3px solid var(--line);border-radius:6px;
+.mcard{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--line);border-radius:6px;
   padding:9px 10px 8px;margin-bottom:8px;min-width:0;overflow:hidden}
 .mcard:last-child{margin-bottom:0}
 .mcard .ct{font-size:12px;line-height:1.4;font-weight:600}
@@ -123,7 +152,7 @@ h1{font-size:clamp(40px,6.4vw,74px);line-height:1.02;letter-spacing:-.035em;marg
   border-top:3px solid var(--brand)}
 .member.lead-member{border-top-color:var(--terracotta)}
 .role{display:inline-block;font-size:11px;font-weight:650;color:var(--terracotta);background:var(--terracotta-soft);
-  border:1px solid #e8d2b6;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:1px}
+  border:1px solid var(--terracotta-border);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:1px}
 .avatar{width:38px;height:38px;border-radius:50%;background:var(--brand-soft);color:var(--brand);
   display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;margin-bottom:12px}
 .member .mname{font-weight:650;font-size:15.5px;margin-bottom:3px}
@@ -133,7 +162,7 @@ h1{font-size:clamp(40px,6.4vw,74px);line-height:1.02;letter-spacing:-.035em;marg
 .duties{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:22px}
 .duty{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 21px}
 .duty .dh{display:flex;align-items:center;gap:9px;padding-bottom:11px;margin-bottom:11px;border-bottom:1px solid var(--border)}
-.dtag{font-size:12px;font-weight:650;color:var(--brand);background:var(--brand-soft);border:1px solid #cfdcf0;
+.dtag{font-size:12px;font-weight:650;color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-border);
   border-radius:999px;padding:2px 9px;white-space:nowrap}
 .dwho{font-size:13.5px;font-weight:600}
 .duty p{font-size:13.6px;color:var(--muted);margin:0;line-height:1.7}
@@ -190,6 +219,13 @@ footer strong{color:var(--ink);font-weight:650}
 
 /* 打印 / 存 PDF */
 @media print{
+  :root,:root[data-theme="dark"]{
+    --paper:#fff; --ink:#000; --muted:#333; --card:#fff; --border:#ddd; --line:#ccc;
+    --surface-2:#fff; --on-brand:#000; --brand:#000; --brand-hover:#000; --brand-soft:#fff;
+    --brand-border:#ccc; --terracotta:#000; --terracotta-soft:#fff; --terracotta-border:#ccc;
+    --header-bg:#fff; --dot:transparent;
+  }
+  .theme-toggle{display:none!important}
   body{background:#fff;background-image:none;font-size:12pt}
   header.site,.btn,nav.links{display:none!important}
   .wrap{max-width:none;padding:0}
@@ -203,6 +239,17 @@ footer strong{color:var(--ink);font-weight:650}
   footer{padding:14px 0}
 }
 </style>
+<script>
+/* 在首次绘制前定好主题，避免闪白/闪黑 */
+(function(){
+  var t;
+  try{ t=localStorage.getItem("ac-theme"); }catch(e){}
+  if(t!=="light"&&t!=="dark"){
+    t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+  }
+  document.documentElement.setAttribute("data-theme",t);
+})();
+</script>
 </head>
 <body>
 
@@ -223,6 +270,10 @@ footer strong{color:var(--ink);font-weight:650}
       <a href="#demo">演示</a>
     </nav>
     <button class="btn" type="button" onclick="window.print()">打印 / 存 PDF</button>
+    <div class="theme-toggle" role="group" aria-label="配色切换">
+      <button type="button" class="tt-opt" data-set-theme="light" aria-pressed="true">白天</button>
+      <button type="button" class="tt-opt" data-set-theme="dark" aria-pressed="false">黑夜</button>
+    </div>
   </div>
 </header>
 
@@ -480,6 +531,25 @@ footer strong{color:var(--ink);font-weight:650}
       io.observe(el);
     });
   }
+  /* 白天 / 黑夜 切换 */
+  var root = document.documentElement;
+  var opts = Array.prototype.slice.call(document.querySelectorAll(".tt-opt"));
+  function paintTheme(){
+    var cur = root.getAttribute("data-theme") || "light";
+    opts.forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === cur));
+    });
+  }
+  opts.forEach(function(b){
+    b.addEventListener("click", function(){
+      var v = b.getAttribute("data-set-theme");
+      root.setAttribute("data-theme", v);
+      try{ localStorage.setItem("ac-theme", v); }catch(e){}
+      paintTheme();
+    });
+  });
+  paintTheme();
+
   var links = Array.prototype.slice.call(document.querySelectorAll("#nav a"));
   var targets = links.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
   if (targets.length && "IntersectionObserver" in window) {
