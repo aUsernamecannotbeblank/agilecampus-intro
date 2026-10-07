@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AgileCampus · 团队项目介绍</title>
-<meta name="description" content="AgileCampus —— 面向高校实验室、课程与学科竞赛团队的轻量化敏捷项目管理平台。">
+<title>AgileNest · 团队项目介绍</title>
+<meta name="description" content="AgileNest —— 面向课程设计、实验室课题与竞赛团队的高校敏捷项目协作平台。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23294a78'/%3E%3Cpath d='M8 22 16 9l8 13H8z' fill='none' stroke='%23f3f1ea' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E">
 
 <!--
   ============================================================================
-  AgileCampus 项目介绍页 · 精简版（单文件、零外部依赖、可离线双击打开）
+  AgileNest 项目介绍页 · 精简版（单文件、零外部依赖、可离线双击打开）
   包含四部分：项目简介 / 团队成员 / 技术栈 / 主要功能
+  内容依据 GitHub 仓库 README（RETEMPT/AgileNest，v0.3.1-rc.1）概括，改动请同步核对。
   细节内容后续再补；完整版另存于 AgileCampus-介绍页-详细版.html
 
   待补充：
@@ -39,17 +40,17 @@ body{
   background-size:24px 24px;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
-h1,h2,.num{font-family:var(--serif);letter-spacing:-.01em}
-h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin:12px 0 10px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:28px;padding-right:28px}
+h1,h2,.num{font-family:var(--serif);letter-spacing:-.02em}
+h2{font-size:clamp(26px,3.5vw,40px);line-height:1.16;margin:14px 0 14px}
 h3{font-size:16px;margin:0 0 6px;font-weight:650}
 p{margin:0 0 14px}
 a{color:var(--brand)}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta)}
-.lead{color:var(--muted);font-size:16.5px;line-height:1.8;max-width:72ch}
-.statement{font-size:17.5px;line-height:1.9;color:var(--ink);max-width:76ch}
-.sec{padding:66px 0;border-top:1px solid var(--border)}
-.sec-head{max-width:74ch;margin-bottom:30px}
+.lead{color:var(--muted);font-size:17px;line-height:1.75;max-width:68ch}
+.statement{font-size:18px;line-height:1.85;color:var(--ink);max-width:74ch}
+.sec{padding-top:100px;padding-bottom:100px;border-top:1px solid var(--border)}
+.sec-head{max-width:74ch;margin-bottom:40px}
 
 /* 页头 */
 header.site{position:sticky;top:0;z-index:60;background:rgba(243,241,234,.9);
@@ -57,30 +58,59 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(243,241,234,.9);
 .bar{display:flex;align-items:center;gap:18px;height:60px}
 .mark{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;white-space:nowrap;text-decoration:none;color:var(--ink)}
 nav.links{display:flex;gap:2px;margin-left:auto}
-nav.links a{font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:6px;white-space:nowrap}
+nav.links a{font-size:13px;color:var(--muted);text-decoration:none;padding:7px 13px;border-radius:999px;white-space:nowrap}
 nav.links a:hover{background:var(--brand-soft);color:var(--brand)}
 nav.links a.active{color:var(--brand);font-weight:650;background:var(--brand-soft)}
 .btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;text-decoration:none;
-  padding:8px 15px;border-radius:7px;border:1px solid var(--border);background:transparent;color:var(--brand);
+  padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--brand);
   cursor:pointer;font-family:inherit;transition:.18s}
 .btn:hover{background:var(--brand-soft);border-color:#cfdcf0}
 
 /* Hero */
-.hero{padding:62px 0 66px}
+.hero{padding-top:104px;padding-bottom:100px}
 .badge{display:inline-block;font-size:12.5px;font-weight:650;color:var(--brand);background:var(--brand-soft);
   border:1px solid #cfdcf0;border-radius:999px;padding:5px 13px}
-h1{font-size:clamp(36px,5.6vw,56px);line-height:1.08;margin:16px 0 6px}
-.tagline{font-family:var(--serif);font-size:clamp(15px,1.7vw,18px);color:var(--terracotta);margin:0 0 14px}
+h1{font-size:clamp(40px,6.4vw,74px);line-height:1.02;letter-spacing:-.035em;margin:20px 0 10px}
+.tagline{font-family:var(--serif);font-size:clamp(15px,1.6vw,17px);color:var(--terracotta);margin:0 0 18px}
 .teamline{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--muted);
   background:var(--card);border:1px solid var(--border);border-radius:999px;padding:7px 16px;margin-bottom:20px}
 .teamline b{color:var(--ink);font-weight:650}
+.hero-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:2px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;text-decoration:none;
+  padding:10px 20px;border-radius:999px;background:var(--brand);color:#fff;border:1px solid var(--brand);transition:.18s}
+.btn-primary:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
+.btn-primary svg{flex:none}
+.repo-url{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px}
+.repo-url a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+.repo-url a:hover{color:var(--brand);border-bottom-color:var(--brand)}
 .hero .lead{margin-bottom:0}
+
+/* 首屏看板示意图（纯 CSS，后续可用真截图替换） */
+.mock{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;
+  box-shadow:0 18px 44px -26px rgba(28,22,12,.34)}
+.mock-top{display:flex;align-items:center;gap:10px;margin-bottom:15px;padding-bottom:13px;border-bottom:1px solid var(--border)}
+.mock-top .t{font-size:13px;font-weight:650}
+.mock-top .u{margin-left:auto;font-size:11.5px;color:var(--muted)}
+.mock-cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.mcol{background:#faf8f3;border:1px solid var(--border);border-radius:9px;padding:10px 9px;min-height:152px;
+  min-width:0;overflow:hidden}
+.mcol .h{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:650;color:var(--muted);
+  margin-bottom:9px;white-space:nowrap;overflow:hidden}
+.mcol .h i{width:7px;height:7px;border-radius:50%;flex:none}
+.mcol .h b{margin-left:auto;font-weight:600;color:#b8b2a6}
+.mcard{background:#fff;border:1px solid var(--border);border-left:3px solid var(--line);border-radius:6px;
+  padding:9px 10px 8px;margin-bottom:8px;min-width:0;overflow:hidden}
+.mcard:last-child{margin-bottom:0}
+.mcard .ct{font-size:12px;line-height:1.4;font-weight:600}
+.mcard .cm{display:flex;align-items:center;gap:5px;margin-top:7px;font-size:10.5px;color:var(--muted);
+  white-space:nowrap;overflow:hidden}
+.mcard .dot{width:6px;height:6px;border-radius:50%;flex:none}
 
 /* 通用卡片 */
 .grid{display:grid;gap:15px}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:19px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
 .card p{font-size:14.2px;color:var(--muted);margin:0}
 .card .k{font-size:12.5px;color:var(--terracotta);font-weight:650;letter-spacing:.04em}
 .mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px}
@@ -89,7 +119,7 @@ h1{font-size:clamp(36px,5.6vw,56px);line-height:1.08;margin:16px 0 6px}
 
 /* 团队成员 */
 .members{display:grid;grid-template-columns:repeat(auto-fit,minmax(186px,1fr));gap:15px}
-.member{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 17px;
+.member{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;
   border-top:3px solid var(--brand)}
 .member.lead-member{border-top-color:var(--terracotta)}
 .role{display:inline-block;font-size:11px;font-weight:650;color:var(--terracotta);background:var(--terracotta-soft);
@@ -101,7 +131,7 @@ h1{font-size:clamp(36px,5.6vw,56px);line-height:1.08;margin:16px 0 6px}
 
 /* 分工明细 */
 .duties{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:22px}
-.duty{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 19px}
+.duty{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 21px}
 .duty .dh{display:flex;align-items:center;gap:9px;padding-bottom:11px;margin-bottom:11px;border-bottom:1px solid var(--border)}
 .dtag{font-size:12px;font-weight:650;color:var(--brand);background:var(--brand-soft);border:1px solid #cfdcf0;
   border-radius:999px;padding:2px 9px;white-space:nowrap}
@@ -111,24 +141,19 @@ h1{font-size:clamp(36px,5.6vw,56px);line-height:1.08;margin:16px 0 6px}
 
 /* 技术栈 */
 .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
-.tech{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:13px 15px}
+.tech{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:15px 17px}
 .tech .tn{font-weight:650;font-size:14px;margin-bottom:2px}
 .tech .td{font-size:12.5px;color:var(--muted);line-height:1.55}
 
 /* 主要功能 */
 .feats{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
 .feat{display:grid;grid-template-columns:30px 1fr;gap:13px;background:var(--card);
-  border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px}
+  border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
 .feat .no{font-family:var(--serif);font-size:16px;color:var(--terracotta);line-height:1.5}
 .feat h3{margin-bottom:3px}
 .feat p{font-size:13.6px;color:var(--muted);margin:0;line-height:1.65}
 
-/* 演示 */
-.demo-slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);padding:62px 20px;text-align:center}
-.demo-slot .t{font-family:var(--serif);font-size:20px;color:var(--brand)}
-.demo-slot .s{font-size:12.5px;color:var(--muted)}
-/* 有截图后把 .demo-slot 换成 .shots 结构（用法见文件末尾注释） */
+/* 演示截图（有真实截图后替换掉 .mock 那一段） */
 .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
 .shots figure{margin:0;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:11px}
 .shots img{display:block;width:100%;border-radius:6px}
@@ -150,10 +175,14 @@ footer strong{color:var(--ink);font-weight:650}
 /* 响应式 */
 @media (max-width:900px){
   .g3,.stack,.duties{grid-template-columns:repeat(2,1fr)}
+  .mock-cols{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:680px){
-  .wrap{padding:0 18px}
-  .sec{padding:48px 0}
+  .wrap{padding-left:18px;padding-right:18px}
+  .sec{padding-top:60px;padding-bottom:60px}
+  .hero{padding-top:64px;padding-bottom:58px}
+  .mock{padding:12px}
+  .mock-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
   .g2,.g3,.feats,.stack,.shots,.duties{grid-template-columns:1fr}
   nav.links{display:none}
   .bar .btn{display:none}
@@ -164,7 +193,8 @@ footer strong{color:var(--ink);font-weight:650}
   body{background:#fff;background-image:none;font-size:12pt}
   header.site,.btn,nav.links{display:none!important}
   .wrap{max-width:none;padding:0}
-  .sec{padding:16px 0;border-top:1px solid #ddd;page-break-inside:avoid}
+  .sec{padding-top:16px;padding-bottom:16px;border-top:1px solid #ddd;page-break-inside:avoid}
+  .hero{padding-top:20px;padding-bottom:20px}
   .reveal{opacity:1!important;transform:none!important}
   .card,.member,.tech,.feat{border-color:#ccc}
   h1{font-size:28pt}
@@ -183,7 +213,7 @@ footer strong{color:var(--ink);font-weight:650}
         <rect width="32" height="32" rx="7" fill="#294a78"></rect>
         <path d="M8 22 16 9l8 13H8z" fill="none" stroke="#f3f1ea" stroke-width="2.2" stroke-linejoin="round"></path>
       </svg>
-      AgileCampus
+      AgileNest
     </a>
     <nav class="links" id="nav">
       <a href="#about">项目简介</a>
@@ -200,13 +230,20 @@ footer strong{color:var(--ink);font-weight:650}
 
   <!-- ============ 页首 ============ -->
   <section class="hero wrap">
-    <span class="badge">高校轻量化敏捷项目管理平台</span>
-    <h1>AgileCampus</h1>
-    <p class="tagline">轻敏捷 · 分层 AI · 成果沉淀</p>
+    <span class="badge">高校敏捷项目协作</span>
+    <h1>AgileNest</h1>
+    <p class="tagline">课程设计 · 实验室课题 · 竞赛团队</p>
     <div class="teamline">
       <b>代码全都对</b>
       <span>·</span>
       <span>5 人项目组</span>
+    </div>
+    <div class="hero-links">
+      <a class="btn-primary" href="https://github.com/RETEMPT/AgileNest" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        项目仓库
+      </a>
+      <span class="repo-url"><a href="https://github.com/RETEMPT/AgileNest" target="_blank" rel="noopener">github.com/RETEMPT/AgileNest</a></span>
     </div>
   </section>
 
@@ -215,9 +252,12 @@ footer strong{color:var(--ink);font-weight:650}
     <div class="sec-head reveal">
       <span class="eyebrow">项目简介</span>
       <p class="lead statement">
-        AgileCampus 面向高校学生团队打造轻量化敏捷项目管理平台。简化传统项目管理工具复杂配置，
-        集成任务管理、进度追踪、文档归档能力，并搭载分层 AI 辅助，降低高校团队项目管理门槛，
-        实现项目协作、过程跟踪与成果沉淀一体化。
+        AgileNest 面向课程设计、实验室课题和竞赛团队，覆盖
+        「团队空间 → 成员与职务 → 项目 → 任务协作 → 教师验收」的完整链路。
+      </p>
+      <p class="lead statement">
+        团队支持本科生、硕士生、博士生与老师等学术身份确认，管理员、指导老师、队长、队员等职务可叠加；
+        权限按团队职务与项目场景计算，学术身份本身不赋予权限。
       </p>
     </div>
   </section>
@@ -277,18 +317,18 @@ footer strong{color:var(--ink);font-weight:650}
   <section class="sec wrap" id="stack">
     <div class="sec-head reveal">
       <span class="eyebrow">技术栈</span>
-      <h2>单体全栈，模块化切分</h2>
-      <p class="lead">不拆微服务、不引入多余中间件，把复杂度花在模块契约与测试上。</p>
+      <h2>模块通过公开契约协作</h2>
+      <p class="lead">每个模块由一位 Owner 负责，跨模块只引用契约，不改动对方内部实现。</p>
     </div>
     <div class="stack">
-      <div class="tech reveal"><div class="tn">Next.js 16 · React 19</div><div class="td">应用框架，页面与业务分层</div></div>
-      <div class="tech reveal"><div class="tn">TypeScript</div><div class="td">严格模式，接口以类型约束</div></div>
-      <div class="tech reveal"><div class="tn">PostgreSQL 16 + Drizzle</div><div class="td">数据库与 ORM，迁移可审阅</div></div>
-      <div class="tech reveal"><div class="tn">Auth.js v5</div><div class="td">邮箱密码与飞书登录双通道</div></div>
-      <div class="tech reveal"><div class="tn">Tailwind v4</div><div class="td">样式与设计变量统一管理</div></div>
-      <div class="tech reveal"><div class="tn">Vitest</div><div class="td">契约测试，覆盖越权与状态流转</div></div>
-      <div class="tech reveal"><div class="tn">Docker Compose</div><div class="td">开发与生产环境编排</div></div>
-      <div class="tech reveal"><div class="tn">飞书开放平台</div><div class="td">登录授权与消息通知</div></div>
+      <div class="tech reveal"><div class="tn">Next.js 16</div><div class="td">应用框架与路由</div></div>
+      <div class="tech reveal"><div class="tn">React 19</div><div class="td">界面渲染</div></div>
+      <div class="tech reveal"><div class="tn">TypeScript strict</div><div class="td">类型约束，禁用 any</div></div>
+      <div class="tech reveal"><div class="tn">Tailwind CSS 4</div><div class="td">样式与设计变量</div></div>
+      <div class="tech reveal"><div class="tn">PostgreSQL + Drizzle</div><div class="td">数据存储与追加迁移</div></div>
+      <div class="tech reveal"><div class="tn">Zod 4</div><div class="td">边界输入校验</div></div>
+      <div class="tech reveal"><div class="tn">Vitest · GitHub Verify</div><div class="td">契约测试与构建校验</div></div>
+      <div class="tech reveal"><div class="tn">飞书开放平台</div><div class="td">可选账号连接</div></div>
     </div>
   </section>
 
@@ -296,56 +336,109 @@ footer strong{color:var(--ink);font-weight:650}
   <section class="sec wrap" id="features">
     <div class="sec-head reveal">
       <span class="eyebrow">主要功能</span>
-      <h2>覆盖项目推进的完整链路</h2>
+      <h2>从团队空间到教师验收</h2>
     </div>
     <div class="feats">
       <div class="feat reveal">
         <div class="no">01</div>
-        <div><h3>团队与权限</h3><p>邀请码建队与入队；组长 / 成员 / 教师三级角色，权限统一校验。</p></div>
+        <div><h3>团队与职务</h3><p>团队空间、学术身份确认与可叠加职务：管理员 / 指导老师 / 队长 / 队员。</p></div>
       </div>
       <div class="feat reveal">
         <div class="no">02</div>
-        <div><h3>任务管理</h3><p>创建、指派、截止日期、子任务拆分，任务状态受统一状态机约束。</p></div>
+        <div><h3>三类项目</h3><p>课程设计、实验室课题与竞赛项目，创建后直接进入下一步。</p></div>
       </div>
       <div class="feat reveal">
         <div class="no">03</div>
-        <div><h3>可视化看板</h3><p>待认领 / 进行中 / 待验收 / 已完成 / 待修改五列，拖拽即可流转。</p></div>
+        <div><h3>任务协作</h3><p>五态任务、子任务、姓名指派与截止日期，状态变更走同一套合法转移规则。</p></div>
       </div>
       <div class="feat reveal">
         <div class="no">04</div>
-        <div><h3>表格视图与筛选</h3><p>按标签、负责人、里程碑筛选，并提供逾期与今日的快捷视图。</p></div>
+        <div><h3>看板与表格</h3><p>看板五列拖动、表格视图，筛选、搜索与分组状态保留在链接里。</p></div>
       </div>
       <div class="feat reveal">
         <div class="no">05</div>
-        <div><h3>学生端工作台</h3><p>认领任务、提交成果，按打回意见修改后重新提交。</p></div>
+        <div><h3>提交与验收</h3><p>学生认领、提交、修改；教师分派、验收、打回，与验收事项在同一个工作台。</p></div>
       </div>
       <div class="feat reveal">
         <div class="no">06</div>
-        <div><h3>教师端工作台</h3><p>分派任务、验收通过或打回；可跨项目只读查看整体进展。</p></div>
+        <div><h3>工时与贡献统计</h3><p>工时登记、验收完成度百分比、团队贡献统计与成员工时占比。</p></div>
       </div>
       <div class="feat reveal">
         <div class="no">07</div>
-        <div><h3>工时与进度统计</h3><p>登记工时、计算完成度百分比、汇总成员投入情况。</p></div>
+        <div><h3>日历与里程碑</h3><p>个人日历、项目日历、跨天排期与里程碑；个人安排仅本人可访问。</p></div>
       </div>
       <div class="feat reveal">
         <div class="no">08</div>
-        <div><h3>日历与里程碑</h3><p>按学期节点管理里程碑，并在任务临近截止时自动提醒。</p></div>
+        <div><h3>消息与个人资料</h3><p>站内消息未读筛选、标为已读与任务直达；个人资料与头像编辑。</p></div>
       </div>
     </div>
+    <p class="note reveal">
+      飞书账号连接为可选项。AI 对话侧栏已就位，模型尚未接入；分层 AI 属远期规划。
+    </p>
   </section>
 
   <!-- ============ 演示 ============ -->
   <section class="sec wrap" id="demo">
     <div class="sec-head reveal">
       <span class="eyebrow">演示</span>
-      <h2>界面演示</h2>
+      <h2>界面预览</h2>
+      <p class="lead">看板按任务五态分列。下图是界面示意图，真实截图稍后补充。</p>
     </div>
-    <div class="demo-slot reveal">
-      <div class="t">敬请期待</div>
-      <div class="s">演示图片将在后续补充</div>
+
+    <div class="mock reveal" role="img" aria-label="项目看板示意图：待认领、进行中、待验收、待修改、已完成五列">
+      <div class="mock-top">
+        <span class="t">项目看板 · 课程设计项目</span>
+        <span class="u">示意图 · 按任务五态分列</span>
+      </div>
+      <div class="mock-cols">
+        <div class="mcol">
+          <div class="h"><i style="background:var(--s-unclaimed)"></i>待认领<b>2</b></div>
+          <div class="mcard" style="border-left-color:var(--s-unclaimed)">
+            <div class="ct">整理竞品调研数据</div>
+            <div class="cm"><span class="dot" style="background:#a9722a"></span>中 · 未指派</div>
+          </div>
+          <div class="mcard" style="border-left-color:var(--s-unclaimed)">
+            <div class="ct">编写验收标准</div>
+            <div class="cm"><span class="dot" style="background:#b6482f"></span>高 · 未指派</div>
+          </div>
+        </div>
+        <div class="mcol">
+          <div class="h"><i style="background:var(--s-progress)"></i>进行中<b>2</b></div>
+          <div class="mcard" style="border-left-color:var(--s-progress)">
+            <div class="ct">看板拖拽与状态校验</div>
+            <div class="cm"><span class="dot" style="background:#b6482f"></span>高 · 甲</div>
+          </div>
+          <div class="mcard" style="border-left-color:var(--s-progress)">
+            <div class="ct">日历跨天排期</div>
+            <div class="cm"><span class="dot" style="background:#a9722a"></span>中 · 乙</div>
+          </div>
+        </div>
+        <div class="mcol">
+          <div class="h"><i style="background:var(--s-submitted)"></i>待验收<b>1</b></div>
+          <div class="mcard" style="border-left-color:var(--s-submitted)">
+            <div class="ct">工时统计与贡献占比</div>
+            <div class="cm"><span class="dot" style="background:#a9722a"></span>中 · 丙</div>
+          </div>
+        </div>
+        <div class="mcol">
+          <div class="h"><i style="background:var(--s-rejected)"></i>待修改<b>1</b></div>
+          <div class="mcard" style="border-left-color:var(--s-rejected)">
+            <div class="ct">教师验收台交互</div>
+            <div class="cm"><span class="dot" style="background:#b6482f"></span>打回 · 丁</div>
+          </div>
+        </div>
+        <div class="mcol">
+          <div class="h"><i style="background:var(--s-accepted)"></i>已完成<b>1</b></div>
+          <div class="mcard" style="border-left-color:var(--s-accepted)">
+            <div class="ct">团队与职务权限</div>
+            <div class="cm"><span class="dot" style="background:#3f7a58"></span>已验收 · 戊</div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <!--
-      补截图时：把上面整个 <div class="demo-slot">…</div> 删掉，换成下面这段，
+      补真截图时：把上面的整个 <div class="mock">…</div> 换成下面这段，
       图片文件放到与本页同一目录即可（样式已备好）。
       <div class="shots reveal">
         <figure><img src="demo-1.png" alt="项目看板"><figcaption>项目看板</figcaption></figure>
@@ -359,10 +452,11 @@ footer strong{color:var(--ink);font-weight:650}
 <footer>
   <div class="wrap fg">
     <div>
-      <strong>AgileCampus</strong> · 高校轻量化敏捷项目管理平台<br>
-      <span style="font-size:12.3px">轻敏捷 · 分层 AI · 成果沉淀</span>
+      <strong>AgileNest</strong> · 高校敏捷项目协作<br>
+      <span style="font-size:12.3px">团队空间 → 项目 → 任务协作 → 教师验收</span>
     </div>
     <div>
+      项目仓库：<a href="https://github.com/RETEMPT/AgileNest" target="_blank" rel="noopener" style="color:var(--brand)">github.com/RETEMPT/AgileNest</a><br>
       在线演示：<span style="color:var(--brand);font-weight:650">敬请期待</span>
     </div>
   </div>
